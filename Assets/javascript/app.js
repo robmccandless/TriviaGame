@@ -1,14 +1,15 @@
-< div >
+< div > < / div>
 
-    <
-    /div>
-    //make true/false buttons or multiple choice
-    //create timer 
-    //limit time to 10 seconds for each question
-    //Or 120 seconds for intire game
-    //create alert for number of questions correct
-    //limit button to only one selection
-    //create countdown timer
+
+
+
+//make true/false buttons or multiple choice
+//create timer 
+//limit time to 10 seconds for each question
+//Or 120 seconds for intire game
+//create alert for number of questions correct
+//limit button to only one selection
+//create countdown timer
 
 function generateQuiz(questions, quizContainer, resultsContainer, submitButton) {
 
