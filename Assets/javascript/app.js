@@ -1,8 +1,3 @@
-< div > < / div>
-
-
-
-
 //make true/false buttons or multiple choice
 //create timer 
 //limit time to 10 seconds for each question
@@ -20,6 +15,8 @@ function generateQuiz(questions, quizContainer, resultsContainer, submitButton) 
             'flase'
         }
     }
+
+    $
 
     function showResults(questions, quizContainer, resultsContainer) {
         // code will go here
