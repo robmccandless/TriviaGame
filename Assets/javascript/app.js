@@ -6,27 +6,105 @@
 //limit button to only one selection
 //create countdown timer
 
-function generateQuiz(questions, quizContainer, resultsContainer, submitButton) {
+var questions = [{
+        q: "question-1",
+        a: "true"
 
-    function showQuestions(questions, quizContainer) {
-        question: "a dog has wings",
-        answer: {
-            'true',
-            'flase'
-        }
-    }
+    },
+    {
+        q: "question-2",
+        a: "false"
 
-    $
+    },
+    {
+        q: "question-3",
+        a: "true"
 
-    function showResults(questions, quizContainer, resultsContainer) {
-        // code will go here
-    }
+    },
+    {
+        q: "question-4",
+        a: "false"
 
-    // show the questions
-    showQuestions(questions, quizContainer);
+    },
+    {
+        q: "2+2=4",
+        a: "true"
 
-    // when user clicks submit, show results
-    submitButton.onclick = function() {
-        showResults(questions, quizContainer, resultsContainer);
+    },
+    {
+        q: "60*10=120",
+        a: "false"
+
+    },
+
+]
+var correct = 0;
+var incorrect = 0;
+var unanswered = 0;
+var responses = {};
+var countdown = questions.length * 3;
+$("#timer").text(countdown)
+
+//document.getElementById("timer").textContent = countdown
+
+var timerID = setInterval(count, 1000)
+
+function count() {
+    countdown--
+    $("#timer").text(countdown)
+
+    if (countdown === 0) {
+        alert("time out")
+        clearInterval(timerID)
+        showResults()
     }
 }
+
+function showQuestions() {
+
+    for (var i = 0; i < questions.length; i++) {
+
+        $("#quiz").append(`<h3>${questions[i].q}</h3>`)
+        $("#quiz").append(`<button class="res" index=${i} value="true">True</button>`)
+        $("#quiz").append(`<button class="res" index=${i} value="false">False</button>`)
+    }
+
+    //document.getElementsByClassName("res").addEventlistener("click", function(){})
+
+    $(".res").on("click", function() {
+
+        console.log(this)
+        var index = $(this).attr("index")
+        var res = $(this).attr("value")
+        console.log(index, res)
+        responses[index] = res
+
+
+    })
+}
+
+$("#end").on("click", function() {
+    console.log(responses)
+    showResults()
+})
+
+function showResults() {
+    $("#quiz").empty()
+    $("#submit").empty()
+    for (key in responses) {
+        if (questions[key].a === responses[key]) {
+            correct++
+        } else {
+            incorrect++
+        }
+
+    }
+    unanswered = questions.length - correct - incorrect
+    console.log(correct, incorrect, unanswered)
+    $("#results").append(`<h2>Correct: ${correct}</h2>`)
+    $("#results").append(`<h2>Incorrect: ${incorrect}</h2>`)
+    $("#results").append(`<h2>No responded: ${unanswered}</h2>`)
+}
+
+// show the questions
+showQuestions();

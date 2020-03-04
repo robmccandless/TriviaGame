@@ -3,6 +3,16 @@
 }
 
 h1 {
+    color: red;
+}
+
+    .container {
+        background-color: grey;
+
+}
+
+
+h1 {
     color: lightblue;
     text-align: center;
 }
