@@ -7,22 +7,22 @@
 //create countdown timer
 
 var questions = [{
-        q: "question-1",
+        q: "18+9=27",
         a: "true"
 
     },
     {
-        q: "question-2",
+        q: "11+9=21",
         a: "false"
 
     },
     {
-        q: "question-3",
+        q: "30+3=33",
         a: "true"
 
     },
     {
-        q: "question-4",
+        q: "5+5=11",
         a: "false"
 
     },
